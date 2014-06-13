@@ -1,4 +1,4 @@
-//HMC5883L I2C library for ARM STM32F103xx Microcontrollers - Main header file 
+//HMC5883L I2C library for ARM STM32F103xx Microcontrollers - Main header file
 //Has bit, byte and buffer I2C R/W functions
 // 24/05/2012 by Harinadha Reddy Chintalapalli <harinath.ec@gmail.com>
 // Changelog:
@@ -211,7 +211,7 @@ uint8_t HMC5883L_GetGain()
 void HMC5883L_SetGain(uint8_t gain)
 {
     // use this method to guarantee that bits 4-0 are set to zero, which is a
-    // requirement specified in the datasheet; 
+    // requirement specified in the datasheet;
     uint8_t tmp = gain << (HMC5883L_CRB_GAIN_BIT - HMC5883L_CRB_GAIN_LENGTH + 1);
     HMC5883L_I2C_ByteWrite(HMC5883L_DEFAULT_ADDRESS, &tmp, HMC5883L_RA_CONFIG_B);
 }
@@ -260,7 +260,7 @@ uint8_t HMC5883L_GetMode()
 void HMC5883L_SetMode(uint8_t newMode)
 {
     // use this method to guarantee that bits 7-2 are set to zero, which is a
-    // requirement specified in the datasheet; 
+    // requirement specified in the datasheet;
     uint8_t tmp = HMC5883Lmode << (HMC5883L_MODEREG_BIT - HMC5883L_MODEREG_LENGTH + 1);
     HMC5883L_I2C_ByteWrite(HMC5883L_DEFAULT_ADDRESS, &tmp, HMC5883L_RA_MODE);
     HMC5883Lmode = newMode; // track to tell if we have to clear bit 7 after a read

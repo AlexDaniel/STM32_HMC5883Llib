@@ -1,4 +1,4 @@
-//HMC5883L I2C library for ARM STM32F103xx Microcontrollers - Main header file 
+//HMC5883L I2C library for ARM STM32F103xx Microcontrollers - Main header file
 //Has bit, byte and buffer I2C R/W functions
 // 24/05/2012 by Harinadha Reddy Chintalapalli <harinath.ec@gmail.com>
 // Changelog:
@@ -33,11 +33,11 @@
 
 #ifdef __cplusplus
 extern "C" {
-#endif 
+#endif
 
 /* Includes */
 #include <stdbool.h>
-#include "HAL_HMC5883L.h" 
+#include "HAL_HMC5883L.h"
 
 #define HMC5883L_ADDRESS            0x1E // this device only has one address
 #define HMC5883L_DEFAULT_ADDRESS    (HMC5883L_ADDRESS<<1)

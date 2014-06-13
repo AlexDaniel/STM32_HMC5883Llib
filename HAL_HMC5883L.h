@@ -1,5 +1,5 @@
 //HMC5883L I2C library for ARM STM32F103xx Microcontrollers - Header file has defines
-// to choose I2C peripheral, speed & pins. 
+// to choose I2C peripheral, speed & pins.
 // 24/05/2012 by Harinadha Reddy Chintalapalli <harinath.ec@gmail.com>
 // Changelog:
 //     2012-05-24 - initial release.
@@ -33,7 +33,7 @@
 
 #ifdef __cplusplus
 extern "C" {
-#endif 
+#endif
 
 /* Includes */
 #include "stm32f10x.h"
