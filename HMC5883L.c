@@ -27,6 +27,7 @@
  THE SOFTWARE.
  ================================================================================================
  */
+#include <stdbool.h>
 #include "HMC5883L.h"
 #include "stm32f10x_i2c.h"
 
@@ -68,7 +69,7 @@ bool HMC5883L_TestConnection()
 {
     uint8_t tmp[3] = { 0 };
     HMC5883L_I2C_BufferRead(HMC5883L_DEFAULT_ADDRESS, tmp, HMC5883L_RA_ID_A, 3);
-    return (tmp[0] == 'H' && tmp[1] == '4' && tmp[2] == '3') ? TRUE : FALSE;
+    return tmp[0] == 'H' && tmp[1] == '4' && tmp[2] == '3';
 }
 // CONFIG_A register
 
@@ -306,7 +307,7 @@ bool HMC5883L_GetLockStatus()
 {
     uint8_t tmp;
     HMC5883L_ReadBit(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_STATUS, HMC5883L_STATUS_LOCK_BIT, &tmp);
-    return tmp == 0x01 ? TRUE : FALSE;
+    return tmp == 0x01;
 }
 
 /** Get data ready status.
@@ -323,7 +324,7 @@ bool HMC5883L_GetReadyStatus()
 {
     uint8_t tmp;
     HMC5883L_ReadBit(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_STATUS, HMC5883L_STATUS_READY_BIT, &tmp);
-    return tmp == 0x01 ? TRUE : FALSE;
+    return tmp == 0x01;
 }
 
 /** Write multiple bits in an 8-bit device register.
